@@ -1,0 +1,14 @@
+<launch>
+  <include file="$(find rom1_simulation)/launch/gazebo.launch" />
+
+  <rosparam file="$(find rom1_simulation)/config/rom1_control.yaml" command="load"/>
+
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+    output="screen" ns="/rom1" 
+    args="front_right_wheel_controller 
+    front_left_wheel_controller 
+    back_right_wheel_controller 
+    back_left_wheel_controller
+    joint_state_controller" />
+       
+</launch>

@@ -1,0 +1,14 @@
+<launch> 
+
+  <param name="robot_description" textfile="$(find rom1_description)/urdf/rom1_description.urdf" />  
+  <!--param name="robot_description" textfile="$(find rom1_description)/urdf/rom1_description.urdf" /-->  
+    
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch" />
+ 
+  <node name="spawn_model" pkg="gazebo_ros" type="spawn_model" args="-file $(find rom1_description)/urdf/rom1_description.urdf -urdf -model rom1_description" output="screen" />
+  
+  <!--node name="rviz" pkg="rviz" type="rviz" args="-d $(find rom1_description)/config/rviz.rviz" /-->
+
+</launch>
