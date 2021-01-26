@@ -3,22 +3,22 @@
      Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot
-  name="rom1">
+  name="rom1_description">
   <link
     name="base_link">
     <inertial>
       <origin
-        xyz="0.0017571 0.0013787 -0.019582"
+        xyz="0.024878 0.0018662 0.064393"
         rpy="0 0 0" />
       <mass
-        value="1.4621" />
+        value="14.934" />
       <inertia
-        ixx="0.0046154"
-        ixy="3.5862E-06"
-        ixz="-3.9803E-06"
-        iyy="0.0095142"
-        iyz="9.1626E-07"
-        izz="0.013244" />
+        ixx="0.50162"
+        ixy="-0.00097962"
+        ixz="0.018772"
+        iyy="0.46255"
+        iyz="-0.00017887"
+        izz="0.90672" />
     </inertial>
     <visual>
       <origin
@@ -30,8 +30,8 @@
       </geometry>
       <material
         name="">
-        <color
-          rgba="0.89804 0.91765 0.92941 1" />
+        <!--color rgba="0.89804 0.91765 0.92941 1" /-->
+        <color rgba="1.0 0.4235294118 0.0392156863 1.0" />
       </material>
     </visual>
     <collision>
@@ -48,16 +48,16 @@
     name="front_right_wheel">
     <inertial>
       <origin
-        xyz="-5.5511E-17 -0.0009488 3.1225E-17"
+        xyz="-2.7062E-16 -0.0009488 -6.9389E-17"
         rpy="0 0 0" />
       <mass
         value="2.8826" />
       <inertia
         ixx="0.0029015"
-        ixy="6.7227E-19"
-        ixz="-4.7058E-19"
+        ixy="-1.6738E-17"
+        ixz="2.432E-19"
         iyy="0.00525"
-        iyz="5.8226E-19"
+        iyz="9.3041E-19"
         izz="0.0029015" />
     </inertial>
     <visual>
@@ -70,8 +70,8 @@
       </geometry>
       <material
         name="">
-        <color
-          rgba="0.01 0.01 0.43725 1" />
+        <!-- <color rgba="0.29804 0.29804 0.29804 1" /> -->
+        <color rgba="1.0 1.0 1.0 1" />
       </material>
     </visual>
     <collision>
@@ -88,7 +88,7 @@
     name="front_right_wheel_joint"
     type="continuous">
     <origin
-      xyz="0.062204 -0.22142 -0.027014"
+      xyz="0.05425 -0.22 -0.028997"
       rpy="0 0 0" />
     <parent
       link="base_link" />
@@ -98,125 +98,19 @@
       xyz="0 1 0" />
   </joint>
   <link
-    name="front_left_wheel">
-    <inertial>
-      <origin
-        xyz="-7.3219E-14 0.0009488 1.6442E-13"
-        rpy="0 0 0" />
-      <mass
-        value="2.8826" />
-      <inertia
-        ixx="0.0029015"
-        ixy="3.5176E-15"
-        ixz="-7.253E-15"
-        iyy="0.00525"
-        iyz="-8.8944E-15"
-        izz="0.0029015" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://rom1_description/meshes/front_left_wheel.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.01 0.01 0.43725 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://rom1_description/meshes/front_left_wheel.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="front_left_wheel_joint"
-    type="continuous">
-    <origin
-      xyz="0.060348 0.22358 -0.027014"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="front_left_wheel" />
-    <axis
-      xyz="0 1 0" />
-  </joint>
-  <link
-    name="back_left_wheel">
-    <inertial>
-      <origin
-        xyz="-1.1102E-16 0.0009488 1.7347E-17"
-        rpy="0 0 0" />
-      <mass
-        value="2.8826" />
-      <inertia
-        ixx="0.0029015"
-        ixy="-2.0383E-17"
-        ixz="-8.4465E-19"
-        iyy="0.00525"
-        iyz="1.0126E-18"
-        izz="0.0029015" />
-    </inertial>
-    <visual>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://rom1_description/meshes/back_left_wheel.STL" />
-      </geometry>
-      <material
-        name="">
-        <color
-          rgba="0.01 0.01 0.43725 1" />
-      </material>
-    </visual>
-    <collision>
-      <origin
-        xyz="0 0 0"
-        rpy="0 0 0" />
-      <geometry>
-        <mesh
-          filename="package://rom1_description/meshes/back_left_wheel.STL" />
-      </geometry>
-    </collision>
-  </link>
-  <joint
-    name="back_left_wheel_joint"
-    type="continuous">
-    <origin
-      xyz="-0.063652 0.22358 -0.027014"
-      rpy="0 0 0" />
-    <parent
-      link="base_link" />
-    <child
-      link="back_left_wheel" />
-    <axis
-      xyz="0 1 0" />
-  </joint>
-  <link
     name="back_right_wheel">
     <inertial>
       <origin
-        xyz="-2.2204E-16 -0.0009488 -1.0408E-17"
+        xyz="6.9389E-17 -0.0009488 2.7756E-17"
         rpy="0 0 0" />
       <mass
         value="2.8826" />
       <inertia
         ixx="0.0029015"
-        ixy="4.3227E-19"
-        ixz="6.4507E-20"
+        ixy="-1.5199E-17"
+        ixz="-1.4949E-19"
         iyy="0.00525"
-        iyz="4.6936E-19"
+        iyz="2.7321E-19"
         izz="0.0029015" />
     </inertial>
     <visual>
@@ -229,8 +123,8 @@
       </geometry>
       <material
         name="">
-        <color
-          rgba="0.01 0.01 0.43725 1" />
+        <!-- <color rgba="0.29804 0.29804 0.29804 1" /> -->
+           <color rgba="1.0 1.0 1.0 1" />
       </material>
     </visual>
     <collision>
@@ -247,7 +141,7 @@
     name="back_right_wheel_joint"
     type="continuous">
     <origin
-      xyz="-0.061796 -0.22142 -0.027014"
+      xyz="-0.05425 -0.22 -0.028997"
       rpy="0 0 0" />
     <parent
       link="base_link" />
@@ -256,8 +150,114 @@
     <axis
       xyz="0 1 0" />
   </joint>
+  <link
+    name="front_left_wheel">
+    <inertial>
+      <origin
+        xyz="-6.8834E-15 0.0009488 -1.5682E-15"
+        rpy="0 0 0" />
+      <mass
+        value="2.8826" />
+      <inertia
+        ixx="0.0029015"
+        ixy="-1.5963E-17"
+        ixz="-2.3471E-19"
+        iyy="0.00525"
+        iyz="3.099E-18"
+        izz="0.0029015" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rom1_description/meshes/front_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <!-- <color rgba="0.29804 0.29804 0.29804 1" /> -->
+           <color rgba="1.0 1.0 1.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rom1_description/meshes/front_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.05425 0.22 -0.029"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="front_left_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="back_left_wheel">
+    <inertial>
+      <origin
+        xyz="-6.7099E-15 0.0009488 -1.8041E-15"
+        rpy="0 0 0" />
+      <mass
+        value="2.8826" />
+      <inertia
+        ixx="0.0029015"
+        ixy="-1.6306E-17"
+        ixz="2.1705E-19"
+        iyy="0.00525"
+        iyz="3.4145E-18"
+        izz="0.0029015" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rom1_description/meshes/back_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <!-- <color rgba="0.29804 0.29804 0.29804 1" /> -->
+         <color rgba="1.0 1.0 1.0 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://rom1_description/meshes/back_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="back_left_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.05425 0.22 -0.029"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="back_left_wheel" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
 
-  <transmission name="motor1">
+      <transmission name="motor1">
     <type>transmission_interface/SimpleTransmission</type>
     <joint name="front_right_wheel_joint">
         <hardwareInterface>hardware_interface/VelocityJointInterface</hardwareInterface>
@@ -306,5 +306,6 @@
       <robotNamespace>rom1</robotNamespace>
     </plugin>
 </gazebo>
- 
+
+
 </robot>
